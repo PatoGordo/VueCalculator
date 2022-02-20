@@ -1,12 +1,14 @@
-import { AppTopbar } from "./components/app-topbar.js"
+import { AppDisplay } from "./components/app-display.js"
+import { AppKeyboard } from "./components/app-keyboard.js"
 
 export class App {
   components = {
-    'app-topbar': new AppTopbar()
+    'app-display': new AppDisplay(),
+    'app-keyboard': new AppKeyboard()
   }
   
   template = `
-    <app-topbar />
-    <router-view class="page" />
+    <app-display />
+    <app-keyboard />
   `
 }

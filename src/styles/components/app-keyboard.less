@@ -1,0 +1,22 @@
+.keyboard {
+  width: 100%;
+  height: 60vh;
+  position: fixed;
+  bottom: 0;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+  button {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    &.equal {
+      background: #FFA12C;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}

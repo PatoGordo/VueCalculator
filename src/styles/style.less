@@ -1,6 +1,6 @@
 @import './variables.less';
-@import './views/home.less';
-@import './components/app-topbar.less';
+@import './components/app-keyboard.less';
+@import './components/app-display.less';
 @import './polyfills/md-textfield.less';
 
 * {
@@ -15,19 +15,6 @@ body, #app {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.page {
-  padding: 16px;
-  width: min(510px, 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 16px;
-  h2 {
-    font-weight: 500;
-    padding-bottom: 16px;
-  }
 }
 
 button, .button-like {
@@ -60,5 +47,8 @@ button, .button-like {
   &.orange {
     background: #FF8800 !important;
     color: #fff !important;
+  }
+  &:disabled {
+    filter: brightness(0.8);
   }
 }
