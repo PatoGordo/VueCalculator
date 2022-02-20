@@ -1,0 +1,124 @@
+@bg-color: #424242;
+@hl-color: #0080FF;
+@muted-color: #555;
+@trans-time: 200ms;
+@width: 360px;
+
+.md-textfield-outlined {
+  position: relative;
+  margin: 24px 0;
+  width: 100%;
+
+  label {
+    position: absolute;
+    font-size: 14px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: gray;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: 0.2s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0.8rem;
+    color: #000;
+    transition: 0.2s ease-out;
+    background: #fff;
+  }
+
+  input:focus {
+    border-color: #0080FF;
+  }
+
+  input:focus+label {
+    color: #0080FF;
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+  }
+
+  input:not(:placeholder-shown)+label {
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+  }
+}
+
+.md-textfield {
+  position: relative;
+  margin: 24px 0;
+  width: 100%;
+  
+  textarea {
+    resize: none;
+  }
+
+  input,
+  textarea,
+  select {
+    background: none;
+    color: @muted-color;
+    font-size: 14px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: @width;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid @muted-color;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus~label,
+    &:valid~label {
+      top: -14px;
+      font-size: 14px;
+      color: @hl-color;
+    }
+
+    &:focus~.bar:before {
+      width: @width;
+    }
+  }
+
+  input[type="password"] {
+    letter-spacing: 0.3em;
+  }
+
+  label {
+    color: @muted-color;
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: @trans-time ease all;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: @width;
+
+    &:before {
+      content: "";
+      height: 1px;
+      width: 0;
+      bottom: 0px;
+      position: absolute;
+      background: @hl-color;
+      transition: @trans-time ease all;
+      left: 0%;
+    }
+  }
+}
